@@ -24,6 +24,17 @@ CREATE TABLE users (
     hashed_password varchar(60) NOT NULL,
     PRIMARY KEY (id)
     );
+ * 
+ CREATE TABLE tweet (
+    id int NOT NULL AUTO_INCREMENT,
+    userId int NOT NULL,
+    text varchar(140) NOT NULL,
+    creationDate date NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY(userId)
+    REFERENCES users(id) ON DELETE CASCADE
+    );
+ *  
 */    
 
 $conn->close();
